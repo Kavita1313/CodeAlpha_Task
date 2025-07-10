@@ -1,0 +1,443 @@
+/* General Styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #090909;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f4f3f3;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    text-align: center;
+    color: #2f4964;
+    margin-bottom: 20px;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: #eee;
+    margin: 40px 0;
+}
+
+/* Player Instance Styling */
+.player-instance {
+    background-color: #c3d6e0;
+    border: 1px solid #a4c0ca;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.player-instance h2 {
+    color: #35678b;
+    margin-top: 0;
+}
+
+.player-instance img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.track-info p {
+    margin: 5px 0;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.track-info p:last-child {
+    font-size: 0.9em;
+    color: #555;
+    font-weight: normal;
+}
+
+.controls-buttons {
+    margin: 15px 0;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.controls-buttons button {
+    background-color: #203b6d;
+    color: rgb(238, 235, 235);
+    border: none;
+    padding: 10px 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.95em;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.controls-buttons button:hover {
+    background-color: #4b6fbd;
+    transform: translateY(-1px);
+}
+
+.controls-buttons button:active {
+    transform: translateY(0);
+}
+
+.volumeControl {
+    width: 120px;
+    -webkit-appearance: none;
+    height: 8px;
+    background: #52789e;
+    border-radius: 5px;
+    outline: none;
+    opacity: 0.7;
+    transition: opacity .2s;
+}
+
+.volumeControl::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #1e3c69;
+    cursor: pointer;
+}
+
+.volumeControl::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #041144;
+    cursor: pointer;
+}
+
+.addMusicFileInstance {
+    margin-top: 10px;
+    font-size: 0.9em;
+    padding: 8px;
+    border: 1px solid #68789d;
+    border-radius: 5px;
+    background-color: #dee1e1;
+}
+
+.player-playlist {
+    background-color:  #c3d6e0;
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    margin-top: 20px;
+    border-top: 1px solid #2a4b5e;
+    padding-top: 10px;
+}
+
+.player-playlist li {
+    background-color: #dee1e1;
+    border: 1px solid #e0e0e0;
+    margin-bottom: 8px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.95em;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.player-playlist li:hover {
+    background-color: #f0f8ff;
+    transform: translateY(-1px);
+}
+
+.player-playlist li.active {
+    background-color: #d4edda; /* Highlight active song */
+    border-color: #203b6d;
+    color: #155724;
+    font-weight: bold;
+}
+
+/* Global Playlists and Music Library */
+.playlist-section, .music-library-section {
+    background-color:  #c3d6e0;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.playlist-section h2, .music-library-section h2 {
+    color: #2c3e50;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+#createPlaylistBtn {
+    background-color: #203b6d;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.95em;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    margin-right: 10px;
+}
+
+#createPlaylistBtn:hover {
+    background-color:#4b6fbd;
+    transform: translateY(-1px);
+}
+
+#playlistSelector {
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: 1px solid #34609a;
+    background-color:  #dee1e1;
+    font-size: 0.95em;
+    margin-bottom: 15px;
+    width: calc(100% - 22px); /* Adjust for padding and border */
+    max-width: 300px;
+}
+
+#globalPlaylist, #musicLibrary {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+}
+
+#globalPlaylist li, #musicLibrary li {
+    background-color:  #dee1e1;
+    border: 1px solid #34609a;
+    margin-bottom: 8px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.95em;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+#globalPlaylist li:hover, #musicLibrary li:hover {
+    background-color: #f0f8ff;
+    transform: translateY(-1px);
+}
+
+#searchInput, #genreFilter, #artistFilter {
+    width: calc(100% - 22px); /* Adjust for padding and border */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid  #34609a;
+    border-radius: 5px;
+    font-size: 0.95em;
+}
+
+#genreFilter, #artistFilter {
+    width: auto; /* Allow filters to size based on content */
+    margin-right: 10px;
+    display: inline-block;
+}
+
+/* Theme Toggle */
+#themeToggle {
+    display: block;
+    margin: 30px auto 0;
+    background-color: #1c466b;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+#themeToggle:hover {
+    background-color: #4b6fbd;
+    transform: translateY(-1px);
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+}
+
+.dark-mode .container {
+    background-color: #34495e;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode h1, .dark-mode h2 {
+    color: #ecf0f1;
+}
+
+.dark-mode hr {
+    background-color: #555;
+}
+
+.dark-mode .player-instance {
+    background-color: #46627f;
+    border-color: #5d7f9c;
+}
+
+.dark-mode .player-instance h2 {
+    color: #92b1cd;
+}
+
+.dark-mode .track-info p {
+    color: #ecf0f1;
+}
+
+.dark-mode .track-info p:last-child {
+    color: #bdc3c7;
+}
+
+.dark-mode .controls-buttons button {
+    background-color: #5a8cb0;
+}
+
+.dark-mode .controls-buttons button:hover {
+    background-color: #4b7a9e;
+}
+
+.dark-mode .volumeControl {
+    background: #555;
+}
+
+.dark-mode .volumeControl::-webkit-slider-thumb,
+.dark-mode .volumeControl::-moz-range-thumb {
+    background: #5a8cb0;
+}
+
+.dark-mode .addMusicFileInstance {
+    background-color: #4a637d;
+    border-color: #666;
+    color: #ecf0f1;
+}
+
+.dark-mode .player-playlist li {
+    background-color: #4a637d;
+    border-color: #666;
+    color: #ecf0f1;
+}
+
+.dark-mode .player-playlist li:hover {
+    background-color: #5a7590;
+}
+
+.dark-mode .player-playlist li.active {
+    background-color: #4b6a4f; /* Darker highlight for active song */
+    border-color: #3b5368;
+    color: #e6ffe8;
+}
+
+.dark-mode .playlist-section, .dark-mode .music-library-section {
+    background-color: #3b5368;
+    border-color: #555;
+}
+
+.dark-mode #createPlaylistBtn {
+    background-color: #42719a;
+}
+
+.dark-mode #createPlaylistBtn:hover {
+    background-color: #435ea2;
+}
+
+.dark-mode #playlistSelector,
+.dark-mode #searchInput,
+.dark-mode #genreFilter,
+.dark-mode #artistFilter {
+    background-color: #4a637d;
+    border-color: #666;
+    color: #ecf0f1;
+}
+
+.dark-mode #globalPlaylist li,
+.dark-mode #musicLibrary li {
+    background-color: #4a637d;
+    border-color: #666;
+    color: #ecf0f1;
+}
+
+.dark-mode #globalPlaylist li:hover,
+.dark-mode #musicLibrary li:hover {
+    background-color: #5a7590;
+}
+
+.dark-mode #themeToggle {
+    background-color: #4a545e;
+}
+
+.dark-mode #themeToggle:hover {
+    background-color: #3b4249;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    .controls-buttons {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .controls-buttons button {
+        flex: 1 1 auto;
+        margin: 5px;
+    }
+
+    #playlistSelector,
+    #searchInput,
+    #genreFilter,
+    #artistFilter {
+        width: 100%;
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .player-instance img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .player-instance h2 {
+        font-size: 1.3em;
+    }
+
+    .track-info p {
+        font-size: 1em;
+    }
+
+    .controls-buttons {
+        flex-direction: column;
+    }
+
+    .volumeControl {
+        width: 80%;
+    }
+
+    .addMusicFileInstance {
+        width: 90%;
+    }
+}
